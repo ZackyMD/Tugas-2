@@ -1,0 +1,133 @@
+[
+    {
+        "model":"mywatchlist.BarangMyWatchlist",
+        "pk":1,
+        "fields":{
+            "watchedFilm":"Iya",
+            "titleWatched":"Transformers: The Last Knight",
+            "ratingWatched": "4.7/5.0",
+            "releaseDateWatched": "21 Juni 2017 ",
+            "reviewWatched": "Film ini merupakan film pertama yang saya tonton di bioskop dan menurut saya film ini sangat seru dan menegangkan."
+
+
+        }
+},
+{
+    "model":"mywatchlist.BarangMyWatchlist",
+    "pk":2,
+    "fields":{
+        "watchedFilm":"Iya",
+        "titleWatched":"Warkop DKI Reborn: Jangkrik Boss Part 1",
+        "ratingWatched": "4.4/5.0",
+        "releaseDateWatched": "2 September 2016",
+        "reviewWatched": "Film ini sangat menghibur dengan merecycle film warkop zaman dahulu."
+
+
+    }
+},
+{
+    "model":"mywatchlist.BarangMyWatchlist",
+    "pk":3,
+    "fields":{
+        "watchedFilm":"Iya",
+        "titleWatched":"Spider-Man: No Way Home",
+        "ratingWatched": "4.9/5.0",
+        "releaseDateWatched": "15 Desember 2021",
+        "reviewWatched": "Film ini sangat menegangkan dan visual effect di dalam film ini sangat bagus"
+
+
+    }
+},
+{
+    "model":"mywatchlist.BarangMyWatchlist",
+    "pk":4,
+    "fields":{
+        "watchedFilm":"Iya",
+        "titleWatched":"Doctor Strange in the Multiverse of Madness",
+        "ratingWatched": "4.9/5.0",
+        "releaseDateWatched": "5 Mei 2022",
+        "reviewWatched": "Film ini memiliki visual effect yang sangat menarik dan alur serta musuh yang ada di dalam film ini tidak bisa ditebak"
+
+
+    }
+},
+{
+    "model":"mywatchlist.BarangMyWatchlist",
+    "pk":5,
+    "fields":{
+        "watchedFilm":"Iya",
+        "titleWatched":"Venom: Let There Be Carnage",
+        "ratingWatched": "4.6/5.0",
+        "releaseDateWatched": "17 November 2021",
+        "reviewWatched": "Film ini menampilkan lanjutan cerita dari Venom yang mana musuh dari Venom berhasil masuk ke dalam tubuh seorang pembunuh berantai"
+
+
+    }
+},
+{
+    "model":"mywatchlist.BarangMyWatchlist",
+    "pk":6,
+    "fields":{
+        "watchedFilm":"Tidak",
+        "titleWatched":"Sayap-Sayap Patah",
+        "ratingWatched": "-",
+        "releaseDateWatched": "18 Agustus 2022",
+        "reviewWatched": "Saya tidak bisa memberikan review dari sudut pandang saya karena saya belum menontonnya tetapi kata teman saya film ini sangat menarik"
+
+
+    }
+},
+{
+    "model":"mywatchlist.BarangMyWatchlist",
+    "pk":7,
+    "fields":{
+        "watchedFilm":"Iya",
+        "titleWatched":"Thor: Love and Thunder",
+        "ratingWatched": "4.8/5.0",
+        "releaseDateWatched": "6 Juli 2022",
+        "reviewWatched": "Film ini menceritakan sebuah kehidupan Thor yang kembali bertemu dengan sang mantan dengan penampilan sang mantan yang sangat berbeda"
+
+
+    }
+},
+{
+    "model":"mywatchlist.BarangMyWatchlist",
+    "pk":8,
+    "fields":{
+        "watchedFilm":"Tidak",
+        "titleWatched":"Parasite",
+        "ratingWatched": "-",
+        "releaseDateWatched": "21 Juni 2019",
+        "reviewWatched": "Saya tidak bisa memberikan review dari sudut pandang saya karena saya belum menontonnya tetapi banyak reviewer yang mengatakan film ini sangat baik"
+
+
+    }
+},
+{
+    "model":"mywatchlist.BarangMyWatchlist",
+    "pk":9,
+    "fields":{
+        "watchedFilm":"Iya",
+        "titleWatched":"Incantation",
+        "ratingWatched": "4.0/5.0",
+        "releaseDateWatched": "18 Maret 2022",
+        "reviewWatched": "Film ini sangat menyeramkan dengan alur, audio, dan kisah di dalam film yang mengajak penonton untuk mengikuti yang aktor katakan membuat suasana ketika menonton film ini sangat menegangkan"
+
+
+    }
+},
+{
+    "model":"mywatchlist.BarangMyWatchlist",
+    "pk":10,
+    "fields":{
+        "watchedFilm":"Tidak",
+        "titleWatched":"Money Heist",
+        "ratingWatched": "-",
+        "releaseDateWatched": "2 Mei 2017",
+        "reviewWatched": "Saya tidak bisa memberikan review dari sudut pandang saya karena saya belum menontonnya tetapi dari sudut pandang orang lain yang sudah pernah menontonnya, film ini cukup baik dan menarik"
+
+
+    }
+}
+
+]

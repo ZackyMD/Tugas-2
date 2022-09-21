@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4>Nama: {{nama}}</h4>
+<h4>NPM : {{npm}}</h4>
+
+<table>
+    <tr>
+    <th>Film Sudah Ditonton?</th>
+    <th>Judul Film</th>
+    <th>Rating Film</th>
+    <th>Tanggal Rilis</th>
+    <th>Review Film</th>
+    
+    </tr>
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+    {% for list_film in film %}
+    <tr>
+        <td>{{list_film.watchedFilm}}</td>
+        <td>{{list_film.titleWatched}}</td>
+        <td>{{list_film.ratingWatched}}</td>
+        <td>{{list_film.releaseDateWatched}}</td>
+        <td>{{list_film.reviewWatched}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

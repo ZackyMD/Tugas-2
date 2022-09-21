@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'example_app',
     'katalog',
     'wishlist',
+    'mywatchlist',
 ]
 
 MIDDLEWARE = [
@@ -133,7 +134,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 for directory in [*STATICFILES_DIRS, STATIC_ROOT]:
     directory.mkdir(exist_ok=True)
