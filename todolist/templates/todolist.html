@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% csrf_token %}
+
+<h5>Nama: {{nama}}</h5>
+
+<table>
+    <tr>
+    <th>Judul</th>
+    <th>Tanggal</th>
+    <th>Deskripsi</th>
+    <th>Cek</th>
+    </tr>
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+    {% for todolist in todolist %}
+    <tr>
+        <th>{{todolist.title}}</th>
+        <th>{{todolist.date}}</th>
+        <th>{{todolist.description}}</th>
+        {% if todolist.finish == False %}
+        <th>Belum Selesai</th>
+        {% else %}
+        <th>Selesai</th>
+        {% endif %}
+        <th><a href="{% url 'todolist:cek' todolist.pk %}"><button>Cek</button></th>
+        <th><a href="{% url 'todolist:hapus' todolist.pk %}"><button>Hapus</button></th>
+    </tr>
+{% endfor %}
+</table>
+
+
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+<button><a href="{% url 'todolist:get_task' %}">Tambah Task</a></button>
+<button><a href="{% url 'todolist:logout' %}">Keluar</a></button>
+
+
+{% endblock content %}
