@@ -1,6 +1,12 @@
 ### Nama : Zacky Muchlas Dharmawan
 ### NPM  : 2106702296
 ### Link : https://tugas2-pbp-zacky.herokuapp.com/todolist/
+### Alternative link if keyerror happened : https://tugas2-pbp-zacky.herokuapp.com/todolist/login/
+### Akun Berisi Dummy Data :
+### Username 1 : Apaaja
+### Pass 1     : Y9uGLcsdkpJSieW
+### Username 2 : Terserah
+### Pass 2     : eZ8gUZLg3KzH8nb
 
 Saya di sini ingin menjelaskan beberapa pertanyaan yang diberikan di dalam web PBP Fasilkom UI, di antaranya adalah
 
