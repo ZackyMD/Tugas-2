@@ -1,45 +1,97 @@
 {% extends 'base.html' %}
 
 {% block meta %}
-<title>Login</title>
-{% endblock meta %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
 
-{% block content %}
 
-<div class = "login">
+<style>
+    
+.login {
+    color: aliceblue;
+    text-align: center;
+    /* fallback for old browsers */
+    background: #6a11cb;
 
-    <h1>Login</h1>
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
 
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+}
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+/* .login{
+    text-align: center;
+    background-color: maroon;
+    font-size: 18;
+    color: whitesmoke;
+    font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+    
+} */
+.table1{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15%;
+    margin-top: 7%;
+}
 
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
+a{
+    color: aliceblue;
+}
+
+body{
+    background-color: rgb(30 41 59);
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+</style>
+
+<body>
+    
+    <title>Login</title>
+    
+    {% endblock meta %}
+    
+    {% block content %}
+    
+    <div class = "login">
+    
+        <h1>Login</h1>
+    
+        <form method="POST" action="">
+            {% csrf_token %}
+            <table class="table1">
+                <tr>
+                    <td>Username: </td>
+                    <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                </tr>
+                        
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                </tr>
+    
+                <tr>
+                    <td></td>
+                    <td><input class="btn login_btn" type="submit" value="Login"></td>
+                </tr>
+            </table>
+        </form>
+    
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}     
+            
+        Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a><br>
         
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
-
-</div>
-
-{% endblock content %}
+    </div>
+    
+    {% endblock content %}
+</body>

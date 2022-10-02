@@ -6,10 +6,36 @@
 
 {% block content %}  
 
+<style>
+table{
+    color: aliceblue;
+    text-align: center;
+    /* fallback for old browsers */
+    background: #6a11cb;
 
-<form method="POST" action="">
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
 
-    {% csrf_token %}
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    width: 50%;
+    margin: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
+}
+
+body{
+    background-color: rgb(30 41 59);
+}
+
+</style>
+
+<body>
+    
+    <form method="POST" action="">
+    
+        {% csrf_token %}
 
     <table>
         <tr>
@@ -33,3 +59,4 @@
 
 
 {% endblock content %}
+</body>

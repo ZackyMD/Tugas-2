@@ -3,37 +3,85 @@
 {% block content %}
 
 {% csrf_token %}
+<style>
+table, td, th{
+    border: 1px;
+    border-spacing: 2px;
+    border-style: inset;
+    table-layout: auto;
+    color: aliceblue;
+    text-align: center;
+    /* fallback for old browsers */
+    background: #6a11cb;
 
-<h5>Nama: {{nama}}</h5>
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
 
-<table>
-    <tr>
-    <th>Judul</th>
-    <th>Tanggal</th>
-    <th>Deskripsi</th>
-    <th>Cek</th>
-    </tr>
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-    {% for todolist in todolist %}
-    <tr>
-        <th>{{todolist.title}}</th>
-        <th>{{todolist.date}}</th>
-        <th>{{todolist.description}}</th>
-        {% if todolist.finish == False %}
-        <th>Belum Selesai</th>
-        {% else %}
-        <th>Selesai</th>
-        {% endif %}
-        <th><a href="{% url 'todolist:cek' todolist.pk %}"><button>Cek</button></th>
-        <th><a href="{% url 'todolist:hapus' todolist.pk %}"><button>Hapus</button></th>
-    </tr>
-{% endfor %}
-</table>
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+button{
+    color:whitesmoke;
+    background: rgb(0,14,200);
+    background: linear-gradient(90deg, rgba(0,14,200,1) 0%, rgba(43,78,196,1) 35%, rgba(98,154,213,1) 100%);
+}
+a{
+    color: whitesmoke;
+}
+body{
+   background-color: rgb(30 41 59);
+}
+
+h5{
+    color: aliceblue;
+}
+.nama{
+    background-color:rgb(75 85 99);
+    color: whitesmoke;
+    font-size: large;
+}
+    
+</style>
 
 
-<h5>Sesi terakhir login: {{ last_login }}</h5>
-<button><a href="{% url 'todolist:get_task' %}">Tambah Task</a></button>
-<button><a href="{% url 'todolist:logout' %}">logout</a></button>
-
-
-{% endblock content %}
+<body>
+    <h5 class="nama">Nama: {{nama}}</h5>
+    
+    <table>
+        <tr>
+        <th>Judul</th>
+        <th>Tanggal</th>
+        <th>Deskripsi</th>
+        <th>Cek</th>
+        </tr>
+        {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+        {% for todolist in todolist %}
+        <tr>
+            <th>{{todolist.title}}</th>
+            <th>{{todolist.date}}</th>
+            <th>{{todolist.description}}</th>
+            {% if todolist.finish == False %}
+            <th>Belum Selesai</th>
+            {% else %}
+            <th>Selesai</th>
+            {% endif %}
+            <th><a href="{% url 'todolist:cek' todolist.pk %}"><button>Cek</button></th>
+            <th><a href="{% url 'todolist:hapus' todolist.pk %}"><button>Hapus</button></th>
+        </tr>
+    {% endfor %}
+    </table>
+    
+    
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+    <button><a href="{% url 'todolist:get_task' %}">Tambah Task</a></button>
+    <button><a href="{% url 'todolist:logout' %}">logout</a></button>
+    
+    
+    {% endblock content %}
+</body>
