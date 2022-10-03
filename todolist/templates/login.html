@@ -19,6 +19,10 @@
 
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    border-radius: 7px;
+    margin-top: 20%;
+    margin-left: 4%;
+    margin-right: 5%;
 }
 
 /* .login{
@@ -33,7 +37,30 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15%;
-    margin-top: 7%;
+    margin-top: 13%;
+}
+
+input{
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 10px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+    margin-top: 2%;
 }
 
 a{
@@ -45,6 +72,34 @@ body{
     margin-top: auto;
     margin-bottom: auto;
 }
+
+.login_btn{
+    
+/* CSS */
+
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 15px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  margin-top: 8%;
+
+}
+
 
 
 </style>
@@ -76,7 +131,7 @@ body{
     
                 <tr>
                     <td></td>
-                    <td><input class="btn login_btn" type="submit" value="Login"></td>
+                    <td><input class="login_btn" type="submit" value="Login"></td>
                 </tr>
             </table>
         </form>
@@ -84,7 +139,7 @@ body{
         {% if messages %}
             <ul>
                 {% for message in messages %}
-                    <li>{{ message }}</li>
+                    <p>{{ message }}</p>
                 {% endfor %}
             </ul>
         {% endif %}     
