@@ -54,3 +54,44 @@ Kemudian saya merestriksi akses halaman todolist yang mana ketika mengakses link
 Untuk pembuatan halaman utama todolist yang memuat username pengguna, tombol Tambah Task Baru, tombol logout, serta tabel berisi tanggal pembuatan task, judul task, dan deskripsi task dilakukan di dalam file todolist.html dengan membuat Nama : {{nama}} untuk menampilkan user lalu membuat tabel berisi judul, tanggal, dan deskripsi yang informasinya didapat dengan melakukan loop pada app todolist yang mengambil datanya dari models.py dan mengopernya ke dalam fungsi show_todolist di dalam file views.py. Di luar tabel, dibuat tombol Tambah Task dan logout.
 
 Untuk membuat halaman form pada pembuatan task yang berisi judul task dan deskripsi task, dibuat di dalam create-task.html dengan form yang dibuat secara manual dengan menambahkan td (standart data cells) di dalam kode table dengan tujuan untuk menambahkan To Do dan Description di dalam baris yang sama, lalu untuk inputnya bertipe "text" dengan class form-control.
+
+--------------------------------------------------
+### Apa perbedaaan dari inline, internal, dan external CSS? apa saja kelebihan dan kekurangan dari masing-masing style?
+--------------------------------------------------
+inline = diletakkan di dalam file HTML dengan atribut < style > .
+Kelebihan = permintaan HTTP yang lebih kecil, baik diterapkan jika ingin menguji dan melihat perubahan.
+Kekurangan = inline css harus diterapkan pada setiap elemen.
+
+internal = diletakkan di dalam < head > pada file html dengan class dan id merujuk pada kode CSS.
+Kelebihan = Perubahan terjadi di 1 halaman saja, css dan html digunakan di dalam 1 file, class dan id bisa digunakan oleh internal stylesheet.
+Kekurangan = Meningkatkan waktu akses website.
+
+external = membuat file css tersendiri di luar html dengan memberikan link rujukan di dalam file html.
+Kelebihan = ukuran file html menjadi lebih kecil dan lebih rapi, penerapan desain pada file css dapat digunakan di banyak halaman.
+Kekurangan = Halaman belum tampil secara sempurna hingga file CSS selesai dipanggil.
+
+--------------------------------------------------
+### Jelaskan tag HTML5 yang kamu ketahui!
+--------------------------------------------------
+< html > = untuk membuat sebuah dokumen HTML
+< title > = untuk membut judul dari sebuah halaman
+< body > = untuk membuat isi dari sebuah halaman
+< h1 > sampai < h6 > = untuk membuat heading
+< p > = untuk membuat paragraf
+< br > = untuk menandakan akhir dari sebuah baris
+< link > = untuk menghubungkan antara dokumen dan sumber daya eksternal
+< img > = untuk membuat gambar
+< table > = untuk membuat tabel
+
+--------------------------------------------------
+### Jelaskan tipe-tipe CSS selector yang kamu ketahui!
+--------------------------------------------------
+Tag Selector = menggunakan tag HTML untuk mengaksesnya (contoh = h5 {}).
+ID Selector = menggunakan nama id untuk mengaksesnya (menggunakan '#(nama id)').
+Class Selector = menggunakan nama class untuk mengaksesnya (menggunakan '.(nama class)').
+Universal Selector = untuk menggunakan seluruh tag yang ada di dalam file (menggunakan tanda '*').
+
+--------------------------------------------------
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas!
+--------------------------------------------------
+Saya menggunakan css dengan styel inline karena saya ingin membut desain masing-masing pada setiap halaman. Untuk menggunakan cards pada todolist saya mengambil codenya dari bootstrap (template) yang kemudian saya edit untuk memasukkan hal-hal yang diperlukan. Selain itu, saya juga mengkustomisasi tampilan pada template bootstrap tersebut. Untuk menjadikannya responsive saya hanya menghubungkannya pada link bootstrap dan secara otomatis halaman menjadi responsive.
