@@ -100,6 +100,12 @@ h4{
 h5{
     color: aliceblue;
 }
+
+h6{
+  color: white;
+  font-size: 17px;
+}
+
 .nama{
     background-color:rgb(75 85 99);
     color: whitesmoke;
@@ -472,7 +478,7 @@ body{
     </div>
     
     
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
+    <h6>Sesi terakhir login: {{ last_login }}</h6>
     
                        
     <button><a href="{% url 'todolist:get_task' %}">Tambah Task</a></button>
