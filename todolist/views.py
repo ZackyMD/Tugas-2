@@ -52,8 +52,8 @@ def create_todolist(request):
     if request.method == "POST":
         title = request.POST.get("title")
         description = request.POST.get("description")
-        date=datetime.now()
-        user=request.uuser
+        date=datetime.datetime.now()
+        user=request.user
 
         Task.objects.create(
             title=title,

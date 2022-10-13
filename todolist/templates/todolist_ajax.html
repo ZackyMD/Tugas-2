@@ -468,25 +468,26 @@ body{
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <form id="form">
-                {% csrf_token %}
-              <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">To Do:</label>
-                <input type="text" class="form-control todo">
-              </div>
-              <div class="mb-3">
-                <label for="message-text" class="col-form-label">Description:</label>
-                <textarea class="form-control desc" id="description"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="addNewTask" >Submit</button>
-          </div>
+                    <form id="form">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">To Do:</label>
+                            <input name="title" type="text" class="form-control todo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Description:</label>
+                            <textarea name="description"class="form-control desc" id="description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="addNewTask" href="{% url 'todolist:create_todolist' %}">Submit</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+</body>
     <script>
        async function getTodolist() {
               return fetch("{% url 'todolist:get_json' %}").then((res) => res.json())
@@ -537,7 +538,6 @@ body{
           refreshTodolist()
   
   </script>
-  </body>
   
   {% endblock content %}
 
