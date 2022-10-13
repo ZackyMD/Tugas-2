@@ -1,11 +1,5 @@
 from django.urls import path
-from todolist.views import show_todolist
-from todolist.views import register #sesuaikan dengan nama fungsi yang dibuat
-from todolist.views import login_user #sesuaikan dengan nama fungsi yang dibuat
-from todolist.views import logout_user #sesuaikan dengan nama fungsi yang dibuat
-from todolist.views import get_task #sesuaikan dengan nama fungsi yang dibuat
-from todolist.views import cek
-from todolist.views import hapus
+from todolist.views import *
 
 app_name = 'todolist'
 
@@ -17,4 +11,9 @@ urlpatterns = [
     path('create-task/', get_task, name='get_task'), #sesuaikan dengan nama fungsi yang dibuat
     path('cek/<int:pk>/', cek, name='cek'),
     path('hapus/<int:pk>/', hapus, name='hapus'),
+    path('json/', get_json, name='get_json'),
+    path('create_todolist/', create_todolist, name='create_todolist'),
+    path('show_json/', show_json, name='show_json'),
+
+
 ]

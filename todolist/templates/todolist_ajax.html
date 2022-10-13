@@ -2,13 +2,14 @@
 
 {% block content %}
 
-{% csrf_token %}
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  </head>
+    <script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"</script>
+  
+</head>
 
 <style>
 table, td, th{
@@ -71,8 +72,8 @@ button{
 
 
 .button span {
-  background-color: rgb(5, 6, 45);
-  padding: 16px 24px;
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
   border-radius: 6px;
   width: 100%;
   height: 100%;
@@ -80,14 +81,14 @@ button{
 }
 
 .button:hover span {
-  background: none;
+    background: none;
 }
 
 @media (min-width: 768px) {
-  .button {
-    font-size: 24px;
-    min-width: 196px;
-  }
+    .button {
+        font-size: 24px;
+        min-width: 196px;
+    }
 }
 
 a{
@@ -186,15 +187,15 @@ body{
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-day {
-  color:white;
-  font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 1;
+    color:white;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-month {
-  color: white;
-  line-height: 1;
+    color: white;
+    line-height: 1;
   font-size: 1rem;
   text-transform: uppercase;
 }
@@ -211,14 +212,14 @@ body{
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-secondary .widget-49-date-day {
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
-  font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 1;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-secondary .widget-49-date-month {
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
   line-height: 1;
   font-size: 1rem;
   text-transform: uppercase;
@@ -268,14 +269,14 @@ body{
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-info .widget-49-date-month {
-  color: #36afff;
-  line-height: 1;
-  font-size: 1rem;
+    color: #36afff;
+    line-height: 1;
+    font-size: 1rem;
   text-transform: uppercase;
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-warning {
-  display: flex;
+    display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -422,12 +423,12 @@ body{
 }
 
 .widget-49 .widget-49-meeting-points .widget-49-meeting-item {
-  display: list-item;
+    display: list-item;
   color: #727686;
 }
 
 .widget-49 .widget-49-meeting-points .widget-49-meeting-item span {
-  margin-left: .5rem;
+    margin-left: .5rem;
 }
 
 .widget-49 .widget-49-meeting-action {
@@ -438,7 +439,7 @@ body{
     text-transform: uppercase;
 }
 .btn-primary{
-  text-align: center;
+    text-align: center;
 }
 
 </style>
@@ -447,42 +448,9 @@ body{
 <body>
     <h5 class="nama">Nama: {{nama}}</h5>
     <div class="container">
-        <div class="row row-cols-md-3 mx-auto" style="width: 100%;">
-            {% for todolist in todolist %}
-                <div class="card card-margin">
-                    <div class="card-header no-border">
-                        <h4 class="card-title">{{todolist.title}}</h4>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="widget-49">
-                            <div class="widget-49-title-wrapper">
-                                <div class="widget-49-date-primary">
-                                    <span class="widget-49-date-month">{{todolist.date}}</span>
-                                </div>
-                                <div class="widget-49-meeting-info">
-                                    <span class="widget-49-pro-title">Status</span>
-                                    {% if todolist.finish == False %}
-                                    <span class="widget-49-meeting-time">Belum Selesai</span>
-                                    {% else %}
-                                    <span class="widget-49-meeting-time">Selesai</span>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            <p class="widget-49-meeting-points">
-                                <h3 class="widget-49-meeting-item"><span>{{todolist.description}}</span></h3>
-                            </p>
-                            <div class="widget-49-meeting-action">
-                                <table>
-                                    <th><a href="{% url 'todolist:cek' todolist.pk %}"><button>Cek</button></th>
-                                    <th><a href="{% url 'todolist:hapus' todolist.pk %}"><button>Hapus</button></th>
-
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>            
-                    {% endfor %}
-                </div>
+        <div class="row row-cols-md-3 mx-auto" style="width: 100%;" id="field" >
+            
+        </div>
     </div>
     
     
@@ -490,20 +458,21 @@ body{
     
     <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><a>Tambah Task</a></button>
     <button><a href="{% url 'todolist:logout' %}">logout</a></button>
-   
+    
     <!-- modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">CREATE TASK</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="form" onsubmit="return false;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">CREATE TASK</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form id="form">
+                {% csrf_token %}
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">TO DO:</label>
-                <input type="text" class="form-control todo" id="todo">
+                <label for="recipient-name" class="col-form-label">To Do:</label>
+                <input type="text" class="form-control todo">
               </div>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Description:</label>
@@ -513,90 +482,62 @@ body{
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="update()" >Submit</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="addNewTask" >Submit</button>
           </div>
         </div>
       </div>
     </div>
+    <script>
+       async function getTodolist() {
+              return fetch("{% url 'todolist:get_json' %}").then((res) => res.json())
+          }
+  
+          async function refreshTodolist() {
+              document.getElementById("field").innerHTML = ""
+              const todolist = await getTodolist()
+              let cardAjax = ``
+              
+              todolist.forEach((todo) => {
+              cardAjax += 
+              `<div class="card card-margin">
+                      <div class="card-header no-border">
+                          <h4 class="card-title">${todo.fields.title}</h4>
+                      </div>
+                      <div class="card-body pt-0">
+                          <div class="widget-49">
+                              <div class="widget-49-title-wrapper">
+                                  <div class="widget-49-date-primary">
+                                      <span class="widget-49-date-month">${todo.fields.date}</span>
+                                  </div>
+                                  
+                              </div>
+                              <p class="widget-49-meeting-points">
+                                  <h3 class="widget-49-meeting-item"><span>${todo.fields.description}</span></h3>
+                              </p>
+                              <div class="widget-49-meeting-action">
+                                  
+                                  </div>
+                              </div>
+                          </div>
+                      </div>`            
+              })
+          
+          document.getElementById("field").innerHTML = cardAjax
+          }
+  
+          function addTodolistModal() {
+              fetch("{% url 'todolist:create_todolist' %}", {
+                  method: "POST",
+                  body: new FormData(document.querySelector('#form'))
+              }).then(refreshTodolist)
+              return false
+          }
+  
+          document.getElementById("addNewTask").onclick = addTodolistModal
+          refreshTodolist()
+  
+  </script>
   </body>
   
-    
-  <div id="new_task">
-
-  </div>
-  <script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"</script>
-  <script>
-
-      function update(){
-        $.ajax({
-          url: '{% url "todolist:create_todolist" %}',
-          method: "POST",
-          headers: {
-            "X-CSRFToken": getCookie("csrftoken")
-          },
-          data:{
-            todo : $('#todo').val(),
-            description : $("#description").val(),
-          },
-        success: function(){
-          show();
-        },
-        error: function(){
-          alert("error");
-        }
-      })}
-
-      function show() {
-      $.get("/todolist/json", function(data) {
-        $("#new_task").html("")
-            for(let i = 0; i < data.length ; i++){
-              let d = new Date(data[i].fields.date.substring(0,10));
-             const date = d.toDateString()
-                    $("#new_task").append(`<div class="card card-margin">
-                    <div class="card-header no-border">
-                        <h4 class="card-title">${data[i].fields.title}</h4>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="widget-49">
-                            <div class="widget-49-title-wrapper">
-                                <div class="widget-49-date-primary">
-                                    <span class="widget-49-date-month">${date}</span>
-                                </div>
-    
-                            </div>
-                            <p class="widget-49-meeting-points">
-                                <h3 class="widget-49-meeting-item"><span>${data[i].fields.description}</span></h3>
-                            </p>`)
-              }
-          });
-    }
-    
-      $(document).ready(function(){
-          show();
-      });
-
-
-    // $(document).ready(function(){
-    //   $(document).on('click', 'ajax-save', function(){
-    //     var data = {
-    //       'todo': $('.todo').val(),
-    //       'desc':$('desc').val(),
-    //     }
-    //     $.ajax({
-    //       method: "POST",
-    //       url : "/todolist/add/",
-    //       data : data,
-    //       success: function(response){
-    //         $('#exampleModal').modal('hide');
-    //         $('#exampleModal').find('input').val('');
-
-    //         alertify.set('notifier', 'position', 'top-right');
-    //         alertify.success(response.status);
-    //       }
-    //     });
-    //   });
-    // });
-
-</script>
   {% endblock content %}
 

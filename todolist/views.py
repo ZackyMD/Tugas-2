@@ -5,8 +5,10 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
+from django.http import HttpResponseRedirect, HttpRequest, HttpResponse
 import datetime
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from todolist.models import Task
 
@@ -15,6 +17,11 @@ from todolist.models import Task
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
     toDolist = Task.objects.filter(user=request.user)
+    if request.method == 'POST':
+        temp = ToDoList(user=request.user, title=request.POST.get('title'), description=request.POST.get('description'))
+        temp.save()
+        return JsonResponse({'message': 'success'})
+
     context = {
     'nama' : request.user.username,
     'todolist' : toDolist,
@@ -22,6 +29,42 @@ def show_todolist(request):
 
     }
     return render(request, "todolist.html", context)
+
+# tampilan baru untuk /json 
+@login_required(login_url='/todolist/login/')
+def show_json(request:HttpResponse):
+    dataToDoList = Task.objects.filter(user=request.user)
+    context = {
+        'nama' : request.user.username,
+        'todolist' : dataToDoList,
+        'last_login': request.COOKIES['last_login'],
+    }
+    return render(request, "todolist_ajax.html", context)
+
+# get data AJAX
+def get_json(request):
+    dataToDoList = Task.objects.filter(user=request.user)
+
+    return HttpResponse(serializers.serialize("json", dataToDoList), content_type="application/json")
+
+# add Task di modal
+def create_todolist(request):
+    if request.method == "POST":
+        title = request.POST.get("title")
+        description = request.POST.get("description")
+        date=datetime.now()
+        user=request.uuser
+
+        Task.objects.create(
+            title=title,
+            description=description,
+            date=date,
+            user=user,
+
+        )
+
+    return HttpResponse(b"CREATED", status=201)
+
 
 def register(request):
     form = UserCreationForm()
@@ -72,6 +115,7 @@ def get_task(request):
         wadah.save()
         return redirect('todolist:show_todolist')
     return render(request, "create-task.html", context)
+
 
 def logout_user(request):
     logout(request)
